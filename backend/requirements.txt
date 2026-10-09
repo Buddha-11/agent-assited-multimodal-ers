@@ -1,0 +1,11 @@
+fastapi==0.115.12
+uvicorn[standard]==0.34.2
+pydantic-settings==2.9.1
+sqlalchemy==2.0.40
+python-multipart==0.0.20
+httpx==0.28.1
+numpy==1.26.4
+soundfile==0.13.1
+scikit-learn==1.6.1
+pytest==8.3.5
+imageio-ffmpeg==0.6.0

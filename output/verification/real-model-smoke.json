@@ -1,0 +1,229 @@
+{
+  "test_kind": "real_checkpoint_inference_not_benchmark",
+  "sources": {
+    "anger.wav": "https://huggingface.co/speechbrain/emotion-recognition-wav2vec2-IEMOCAP/resolve/main/anger.wav",
+    "face.jpg": "https://raw.githubusercontent.com/serengil/deepface/master/tests/unit/dataset/img1.jpg"
+  },
+  "results": {
+    "whisper": {
+      "text": "What can you prove it what proof do you have can you prove it?",
+      "language": "en",
+      "segments": [
+        {
+          "start": 0.46,
+          "end": 4.8,
+          "text": "What can you prove it what proof do you have can you prove it?"
+        }
+      ]
+    },
+    "speechbrain": {
+      "available": true,
+      "model": "speechbrain/emotion-recognition-wav2vec2-IEMOCAP",
+      "predicted_label": "ang",
+      "scores": {
+        "neu": 7.546453913154227e-12,
+        "ang": 1.0,
+        "hap": 2.124039740749803e-13,
+        "sad": 1.572094505356697e-13
+      },
+      "score_kind": "model_scores_not_calibrated",
+      "reason": null,
+      "frames_processed": 0,
+      "frames_with_faces": 0,
+      "ambiguous_frames": 0
+    },
+    "deepface": {
+      "available": true,
+      "model": "DeepFace/Emotion",
+      "predicted_label": "happy",
+      "scores": {
+        "angry": 8.869143621247962e-29,
+        "disgust": 0.0,
+        "fear": 6.61731809794963e-36,
+        "happy": 1.0,
+        "sad": 3.388679310944675e-24,
+        "surprise": 1.8213101255905676e-13,
+        "neutral": 3.2563217530409694e-11
+      },
+      "score_kind": "model_scores_not_calibrated",
+      "reason": null,
+      "frames_processed": 5,
+      "frames_with_faces": 5,
+      "ambiguous_frames": 0
+    },
+    "perception_pipeline": {
+      "audio": {
+        "available": true,
+        "model": "speechbrain/emotion-recognition-wav2vec2-IEMOCAP",
+        "predicted_label": "ang",
+        "scores": {
+          "neu": 7.546511159028935e-12,
+          "ang": 1.0,
+          "hap": 2.1240802628059996e-13,
+          "sad": 1.5721305550789322e-13
+        },
+        "score_kind": "model_scores_not_calibrated",
+        "reason": null,
+        "frames_processed": 0,
+        "frames_with_faces": 0,
+        "ambiguous_frames": 0
+      },
+      "visual": {
+        "available": true,
+        "model": "DeepFace/Emotion",
+        "predicted_label": "happy",
+        "scores": {
+          "angry": 8.869143621247962e-29,
+          "disgust": 0.0,
+          "fear": 6.61731809794963e-36,
+          "happy": 1.0,
+          "sad": 3.388679310944675e-24,
+          "surprise": 1.8213101255905676e-13,
+          "neutral": 3.2563217530409694e-11
+        },
+        "score_kind": "model_scores_not_calibrated",
+        "reason": null,
+        "frames_processed": 5,
+        "frames_with_faces": 5,
+        "ambiguous_frames": 0
+      },
+      "transcript": {
+        "text": "What can you prove it what proof do you have can you prove it?",
+        "language": "en",
+        "segments": [
+          {
+            "start": 0.46,
+            "end": 4.8,
+            "text": "What can you prove it what proof do you have can you prove it?"
+          }
+        ]
+      },
+      "agreement": "disagree",
+      "interpretation": "mixed_signals",
+      "uncertain": true
+    },
+    "no_face_check": {
+      "available": false,
+      "model": "DeepFace/Emotion",
+      "predicted_label": null,
+      "scores": {},
+      "score_kind": "model_scores_not_calibrated",
+      "reason": "No unambiguous face detected",
+      "frames_processed": 1,
+      "frames_with_faces": 0,
+      "ambiguous_frames": 0
+    },
+    "api_turn_status": 200,
+    "api_turn": {
+      "session": {
+        "id": "6348030e-7544-4276-8ab2-2de2341c1acd",
+        "user_id": "5562ce2c-2dda-42ef-936d-f18c83bf6630",
+        "started_at": "2026-10-08T21:59:24.379505+00:00",
+        "ended_at": null,
+        "summary": null,
+        "messages": [
+          {
+            "id": "aa87ec5f-1a69-4d97-8a8a-8fc7cbb61bf0",
+            "role": "assistant",
+            "text": "Hello! I\u2019m here to chat. What would you like to talk about today?",
+            "timestamp": "2026-10-08T21:59:25.056668+00:00"
+          },
+          {
+            "id": "9820d405-9f26-46aa-b897-af3659f54449",
+            "role": "user",
+            "text": "What can you prove it what proof do you have can you prove it?",
+            "timestamp": "2026-10-08T21:59:28.609151+00:00"
+          },
+          {
+            "id": "91f3e76a-6a7a-4596-8d7f-5a1af630e42d",
+            "role": "assistant",
+            "text": "It sounds like you\u2019re asking for evidence or proof about something. Could you let me know what specific claim or topic you\u2019re interested in? That way I can give you the most relevant information or evidence I have.",
+            "timestamp": "2026-10-08T21:59:28.611491+00:00"
+          }
+        ],
+        "observations": [
+          {
+            "id": "7041289c-7be4-4f71-8a52-895c519155d1",
+            "message_id": "9820d405-9f26-46aa-b897-af3659f54449",
+            "timestamp": "2026-10-08T21:59:28.610788+00:00",
+            "evidence": {
+              "audio": {
+                "available": true,
+                "model": "speechbrain/emotion-recognition-wav2vec2-IEMOCAP",
+                "predicted_label": "ang",
+                "scores": {
+                  "neu": 7.546309931105721e-12,
+                  "ang": 1.0,
+                  "hap": 2.1239788899028722e-13,
+                  "sad": 1.572040566298616e-13
+                },
+                "score_kind": "model_scores_not_calibrated",
+                "reason": null,
+                "frames_processed": 0,
+                "frames_with_faces": 0,
+                "ambiguous_frames": 0
+              },
+              "visual": {
+                "available": true,
+                "model": "DeepFace/Emotion",
+                "predicted_label": "happy",
+                "scores": {
+                  "angry": 8.869143621247962e-29,
+                  "disgust": 0.0,
+                  "fear": 6.61731809794963e-36,
+                  "happy": 1.0,
+                  "sad": 3.388679310944675e-24,
+                  "surprise": 1.8213101255905676e-13,
+                  "neutral": 3.2563217530409694e-11
+                },
+                "score_kind": "model_scores_not_calibrated",
+                "reason": null,
+                "frames_processed": 5,
+                "frames_with_faces": 5,
+                "ambiguous_frames": 0
+              },
+              "transcript": {
+                "text": "What can you prove it what proof do you have can you prove it?",
+                "language": "en",
+                "segments": [
+                  {
+                    "start": 0.46,
+                    "end": 4.8,
+                    "text": "What can you prove it what proof do you have can you prove it?"
+                  }
+                ]
+              },
+              "agreement": "disagree",
+              "interpretation": "mixed_signals",
+              "uncertain": true
+            },
+            "feedback": null
+          }
+        ]
+      },
+      "agent": {
+        "response": "It sounds like you\u2019re asking for evidence or proof about something. Could you let me know what specific claim or topic you\u2019re interested in? That way I can give you the most relevant information or evidence I have.",
+        "strategy": "clarify",
+        "reason": "Ask for clarification about what the user wants proven",
+        "memory_candidate": null
+      },
+      "memory_candidate": null
+    }
+  },
+  "errors": {},
+  "timings_seconds": {
+    "whisper": 2.156,
+    "speechbrain": 5.876,
+    "deepface": 7.208,
+    "warm_perception_pipeline": 2.655
+  },
+  "speechbrain_api": "(source, hparams_file='hyperparams.yaml', pymodule_file='custom.py', classname='CustomInterface', overrides={}, overrides_must_match=True, savedir=None, use_auth_token=False, download_only=False, huggingface_cache_dir=None, local_strategy: speechbrain.utils.fetching.LocalStrategy = <LocalStrategy.SYMLINK: 1>, **kwargs)",
+  "checkpoint_label_mapping": {
+    "0": "neu",
+    "1": "ang",
+    "2": "hap",
+    "3": "sad"
+  },
+  "torch_version": "2.5.1+cpu",
+  "torch_cuda_available": false
+}

@@ -1,0 +1,11 @@
+-r requirements.txt
+torch==2.5.1
+torchaudio==2.5.1
+speechbrain==1.0.3
+transformers==4.46.3
+huggingface-hub==0.29.3
+faster-whisper==1.1.1
+deepface==0.0.93
+tensorflow==2.16.2
+tf-keras==2.16.0
+opencv-python==4.11.0.86

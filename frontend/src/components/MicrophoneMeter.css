@@ -1,0 +1,22 @@
+.mic-check{margin:4px 14px 15px;padding:14px;background:#111b22;border:1px solid #34444d;border-radius:9px}
+.mic-check-heading{display:flex;align-items:center;justify-content:space-between;color:#c9d8dd;font-size:11px;font-weight:600;margin-bottom:13px}
+.mic-check-heading>span:first-child{display:flex;align-items:center;gap:7px}
+.mic-input-select{display:flex;flex-direction:column;gap:6px;font-size:9px;color:#96aab6}
+.mic-input-select select{width:100%;min-width:0;padding:9px 8px;background:#1b2832;border:1px solid #3d505b;border-radius:6px;color:#d8e6ec;font-size:10px;text-overflow:ellipsis}
+.active-input{font-size:9px;color:#9fb4bd;margin-top:9px;overflow-wrap:anywhere;line-height:1.6}
+.mic-level-bars{display:flex;align-items:center;gap:4px;height:36px;margin:13px 0 8px}
+.mic-level-bars i{flex:1;height:25px;border-radius:3px;background:#293a44;transition:background-color 70ms ease}
+.mic-level-bars i.lit{background:#8ce3b3;box-shadow:0 0 6px #8ce3b324}
+.mic-level-bars i.lit.medium{background:#d4da87}.mic-level-bars i.lit.high{background:#e99a91}
+.mic-level-status{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:9px;color:#9bafba;line-height:1.6}
+.mic-level-status>span:last-child{white-space:nowrap;font-variant-numeric:tabular-nums}
+.mic-check.active .mic-level-status>span:first-child{color:#a7e8c6}
+.mic-check.blocked .mic-level-status>span:first-child,.mic-check.unavailable .mic-level-status>span:first-child{color:#edb4a5}
+.mic-help{font-size:9px;color:#91a7b2;line-height:1.65;margin-top:11px}
+.mic-signal-confirmed{display:flex;align-items:center;gap:5px;font-size:9px;color:#a7e8c6;margin-top:9px}
+.mic-test-actions{display:flex;align-items:center;gap:4px;margin-top:13px}
+.mic-test-actions>.btn:first-child{flex:1;white-space:normal;font-size:10px;padding:7px 9px}
+.mic-playback{border-top:1px solid #324650;margin-top:14px;padding-top:14px}
+.mic-playback audio{width:100%;height:32px;display:block}
+.mic-playback .text-button{margin:12px 0 0}
+@media(max-width:690px){.mic-check{margin:3px 10px 13px;padding:12px}.mic-level-bars{gap:3px}.mic-level-status{flex-wrap:wrap;gap:3px}.mic-test-actions{flex-wrap:wrap}.mic-test-actions>.btn:first-child{font-size:9px}.mic-input-select select{font-size:9px}}

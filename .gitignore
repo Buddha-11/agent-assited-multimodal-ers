@@ -1,0 +1,14 @@
+.venv/
+node_modules/
+dist/
+__pycache__/
+.pytest_cache/
+.env
+*.db
+*.db-*
+.cache/
+data/
+*.log
+*.tsbuildinfo
+wav2vec2_checkpoints/
+output/private/

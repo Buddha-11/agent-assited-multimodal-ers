@@ -1,0 +1,12 @@
+import {Activity,MessageCircle,Plus,UserRound,ChartNoAxesCombined,History,Settings,ArrowUpRight} from 'lucide-react';
+import {Button} from './ui/button';
+import type {Session} from '../types';
+export type Page='conversation'|'analytics'|'profile'|'history';
+export function Sidebar({page,setPage,sessions,selected,onSelect,onNew,onSettings,busy}:{page:Page;setPage:(v:Page)=>void;sessions:Session[];selected?:string;onSelect:(id:string)=>void;onNew:()=>void;onSettings:()=>void;busy:boolean}) {
+  return <aside className="sidebar"><a className="brand" href="#" onClick={e=>{e.preventDefault();setPage('conversation');}}><span className="brand-mark"><Activity size={23}/></span><span>affect<span className="brand-dot">.</span><small>CONVERSATION LAB</small></span></a>
+    <Button onClick={onNew} disabled={busy} className="new-conversation"><Plus size={17}/>New conversation</Button>
+    <div className="nav-section">WORKSPACE</div><nav>{([{key:'conversation',icon:MessageCircle,text:'Conversation'},{key:'analytics',icon:ChartNoAxesCombined,text:'Emotion analytics'},{key:'history',icon:History,text:'Session history'},{key:'profile',icon:UserRound,text:'Profile & memory'}] as const).map(item=><button key={item.key} onClick={()=>setPage(item.key)} className={page===item.key?'nav-item active':'nav-item'}><item.icon size={18}/>{item.text}{page===item.key&&<span className="nav-dot"/>}</button>)}</nav>
+    <div className="nav-section recent-heading">RECENT CONVERSATIONS <span>{sessions.length}</span></div><div className="session-list">{sessions.slice(0,8).map((s,i)=><button key={s.id} disabled={busy} className={`session-item ${s.id===selected?'selected':''}`} onClick={()=>onSelect(s.id)}><MessageCircle size={15}/><span>Conversation {sessions.length-i}<small>{new Date(s.started_at).toLocaleDateString([], {month:'short',day:'numeric'})} · {s.ended_at?'Completed':'Open'}</small></span></button>)}{!sessions.length&&<p className="muted sidebar-empty">Your conversations will appear here.</p>}</div>
+    <div className="sidebar-bottom"><div className="research-note"><span className="eyebrow">RESEARCH PROTOTYPE <ArrowUpRight size={12}/></span><p>A little more understanding.<br/>One conversation at a time.</p></div><button className="nav-item" onClick={onSettings}><Settings size={18}/>Settings & diagnostics</button><div className="participant"><span className="avatar">R</span><span>Research workspace<small>Local participant</small></span><span className="status-dot"/></div></div>
+  </aside>;
+}

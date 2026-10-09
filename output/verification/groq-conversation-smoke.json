@@ -1,0 +1,41 @@
+{
+  "provider": "Groq",
+  "model": "openai/gpt-oss-20b",
+  "mocked": false,
+  "results": [
+    {
+      "step": "opening",
+      "status": 201,
+      "response": "Hello! I\u2019m glad you\u2019re here. What would you like to talk about today?"
+    },
+    {
+      "step": "text_turn",
+      "status": 200,
+      "input": "I spent all evening debugging my university project.",
+      "agent": {
+        "response": "That sounds exhausting\u2014debugging can be a real marathon. What kind of project were you working on, and what\u2019s the main issue you\u2019re tackling?",
+        "strategy": "explore",
+        "reason": "Invite deeper discussion about the project and debugging details",
+        "memory_candidate": null
+      },
+      "message_count": 3,
+      "modality_agreement": "unavailable"
+    },
+    {
+      "step": "text_turn",
+      "status": 200,
+      "input": "Actually, I finally fixed it! Please give me one practical next step.",
+      "agent": {
+        "response": "Great job getting it fixed! A practical next step is to write a short test case that reproduces the original bug\u2014this will help you verify the fix and catch regressions if you change anything else. It also gives you a concrete example to share with teammates or instructors if you need to explain what went wrong and how you solved it.",
+        "strategy": "answer",
+        "reason": "Provide actionable next step",
+        "memory_candidate": null
+      },
+      "message_count": 5,
+      "modality_agreement": "unavailable"
+    }
+  ],
+  "errors": [],
+  "api_transport": "http://127.0.0.1:5173",
+  "test_history_deleted": true
+}
